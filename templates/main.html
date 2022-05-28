@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Main{% endblock %}
+
+{% block nav %}
+<ul>
+  <li><a href="{{ url_for('submit') }}">Submit a message</a></li>
+  <li><a href="{{ url_for('view') }}">View messages</a></li>
+</ul>
+{% endblock %}
+
+{% block header %}<h2>Welcome to Steve Zhu's message bank!</h2>{% endblock %}

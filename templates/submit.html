@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Submit{% endblock %}
+
+{% block nav %}
+<ul>
+  <li><a href="{{ url_for('submit') }}" class="active">Submit a message</a></li>
+  <li><a href="{{ url_for('view') }}">View messages</a></li>
+</ul>
+{% endblock %}
+
+{% block header %}<h2>Submit a message</h2>{% endblock %}
+
+{% block content %}
+  <form method="post">
+      <label for="message">Your message:</label><br>
+      <textarea name="message" id="message"></textarea>
+      <br><br>
+      <label for="handle">Your name or handle:</label><br>
+      <input type="text" name="handle" id="handle">
+      <br><br>
+      <input type="submit" value="Submit message">
+  </form>
+
+  {% if submitted %}
+    <br>
+    Congrulation! You made a submission! 
+  {% endif %}
+
+  {% if error %}
+    <br>
+    Error, please try again!
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}View{% endblock %}
+
+{% block nav %}
+<ul>
+  <li><a href="{{ url_for('submit') }}">Submit a message</a></li>
+  <li><a href="{{ url_for('view') }}" class="active">View messages</a></li>
+</ul>
+{% endblock %}
+
+{% block header %}<h2>Some Cool Messages</h2>{% endblock %}
+
+{% block content %}
+  {% for message in messages %}
+    <br>
+    </b>{{ message[1] }}
+    <br>
+    <i>- {{ message[2] }}</i>
+    <br>
+  {% endfor %}
+{% endblock %}
